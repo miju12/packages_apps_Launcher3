@@ -15,7 +15,8 @@
 -->
 
 <androidx.preference.PreferenceScreen
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:settings="http://schemas.android.com/apk/res/com.android.launcher3">
 
     <com.android.launcher3.settings.NotificationDotsPreference
         android:key="pref_icon_badging"
@@ -43,6 +44,18 @@
         android:summary="@string/show_searchbar_summary"
         android:defaultValue="true"
         android:persistent="true"/>
+
+    <SwitchPreference
+        android:key="pref_desktop_show_labels"
+        android:title="@string/desktop_show_labels"
+        android:defaultValue="true"
+        android:persistent="true" />
+
+    <SwitchPreference
+        android:key="pref_drawer_show_labels"
+        android:title="@string/drawer_show_labels"
+        android:defaultValue="true"
+        android:persistent="true" />
 
 <PreferenceCategory
         android:key="gestures_category"
