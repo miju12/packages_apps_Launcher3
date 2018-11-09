@@ -93,8 +93,6 @@ import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.android.internal.util.pixys.PackageUtils;
-
 /**
  * Various utilities shared amongst the Launcher's classes.
  */
@@ -774,7 +772,7 @@ public final class Utilities {
 
     public static boolean showQSB(Context context) {
         SharedPreferences prefs = getPrefs(context.getApplicationContext());
-        if (!PackageUtils.isPackageInstalled(context, SEARCH_PACKAGE)) {
+        if (!LauncherAppState.getInstanceNoCreate().isSearchAppAvailable()) {
             return false;
         }
         return prefs.getBoolean(KEY_SHOW_SEARCHBAR, true);
