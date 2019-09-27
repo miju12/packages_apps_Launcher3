@@ -30,4 +30,7 @@
     <!-- Show searchbar -->
     <string name="show_searchbar_title">Show search bar</string>
     <string name="show_searchbar_summary">Show the search bar on the home screen</string>
+
+    <string name="state_loading">Applying\u2026</string>
+
 </resources>
