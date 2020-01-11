@@ -25,6 +25,7 @@ import static com.android.launcher3.util.SecureSettingsObserver.newNotificationS
 
 import static com.pixys.launcher.OverlayCallbackImpl.KEY_ENABLE_MINUS_ONE;
 
+import com.android.launcher3.customization.IconDatabase;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -32,6 +33,10 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.view.MenuItem;
+
+import com.android.launcher3.settings.preference.IconPackPrefSetter;
+import com.android.launcher3.settings.preference.ReloadingListPreference;
+import com.android.launcher3.util.AppReloader;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
@@ -78,9 +83,14 @@ public class SettingsActivity extends FragmentActivity
 
     public static boolean restartNeeded = false;
 
+    private static final String KEY_ICON_PACK = "pref_icon_pack";
+
+    private static Context mContext;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mContext = getApplicationContext();
 
         getActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -120,6 +130,10 @@ public class SettingsActivity extends FragmentActivity
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public interface OnResumePreferenceCallback {
+        void onResume();
     }
 
     private boolean startFragment(String fragment, Bundle args, String key) {
@@ -258,7 +272,17 @@ public class SettingsActivity extends FragmentActivity
                             return true;
                         }
                     });
-           }
+
+                case KEY_ICON_PACK:
+                    ReloadingListPreference icons = (ReloadingListPreference) findPreference(KEY_ICON_PACK);
+                    icons.setOnReloadListener(new IconPackPrefSetter(mContext));
+                    icons.setOnPreferenceChangeListener((pref, val) -> {
+                        IconDatabase.clearAll(mContext);
+                        IconDatabase.setGlobal(mContext, (String) val);
+                        AppReloader.get(mContext).reload();
+                        return true;
+                    });
+            }
             return true;
         }
 
