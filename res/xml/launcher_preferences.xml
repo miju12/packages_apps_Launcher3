@@ -125,6 +125,11 @@
 
     </PreferenceCategory>
 
+  <Preference
+        android:key="pref_trust_apps"
+        android:title="@string/trust_apps_manager_name"
+        android:summary="@string/trust_app_summary" />
+
     <PreferenceCategory
             android:key="misc_category"
             android:title="@string/misc_category">
@@ -177,10 +182,6 @@
         android:title="Developer Options"
         android:fragment="com.android.launcher3.settings.DeveloperOptionsFragment"/>
 -->
-
-    <Preference
-        android:key="pref_trust_apps"
-        android:title="@string/trust_apps_manager_name" />
 
 <PreferenceCategory
         android:key="gestures_category"
