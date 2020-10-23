@@ -1407,7 +1407,7 @@ public abstract class RecentsView<T extends StatefulActivity> extends PagedView 
         }
     }
 
-    private void addDismissedTaskAnimations(View taskView, long duration, PendingAnimation anim) {
+    private void addDismissedTaskAnimations(View taskView, long duration, PendingAnimation anim, boolean goingUp) {
         // Use setFloat instead of setViewAlpha as we want to keep the view visible even when it's
         // alpha is set to 0 so that it can be recycled in the view pool properly
         anim.setFloat(taskView, VIEW_ALPHA, 0, ACCEL_2);
@@ -1421,8 +1421,13 @@ public abstract class RecentsView<T extends StatefulActivity> extends PagedView 
                 .setDampingRatio(rp.getFloat(R.dimen.dismiss_task_trans_y_damping_ratio))
                 .setStiffness(rp.getFloat(R.dimen.dismiss_task_trans_y_stiffness));
 
-        anim.add(ObjectAnimator.ofFloat(taskView, secondaryViewTranslate,
-                verticalFactor * secondaryTaskDimension).setDuration(duration), LINEAR, sp);
+        if (goingUp) {
+            anim.add(ObjectAnimator.ofFloat(taskView, secondaryViewTranslate,
+                    verticalFactor * secondaryTaskDimension).setDuration(duration), LINEAR, sp);
+        } else if (getSwipeForClearAllState()) {
+            anim.add(ObjectAnimator.ofFloat(taskView, secondaryViewTranslate,
+                    -verticalFactor * secondaryTaskDimension).setDuration(duration), LINEAR, sp);
+        }
     }
 
     private void removeTask(TaskView taskView, int index, EndState endState) {
@@ -1464,7 +1469,7 @@ public abstract class RecentsView<T extends StatefulActivity> extends PagedView 
             View child = getChildAt(i);
             if (child == taskView) {
                 if (animateTaskView) {
-                    addDismissedTaskAnimations(taskView, duration, anim);
+                    addDismissedTaskAnimations(taskView, duration, anim, true);
                 }
             } else {
                 // If we just take newScroll - oldScroll, everything to the right of dragged task
@@ -1562,7 +1567,7 @@ public abstract class RecentsView<T extends StatefulActivity> extends PagedView 
 
         int count = getTaskViewCount();
         for (int i = 0; i < count; i++) {
-            addDismissedTaskAnimations(getTaskViewAt(i), duration, anim);
+            addDismissedTaskAnimations(getTaskViewAt(i), duration, anim, false);
         }
 
         mPendingAnimation = anim;
@@ -2386,6 +2391,10 @@ public abstract class RecentsView<T extends StatefulActivity> extends PagedView 
             mOverlayEnabled = overlayEnabled;
             updateEnabledOverlays();
         }
+    }
+
+    public boolean getSwipeForClearAllState() {
+        return Utilities.getPrefs(mActivity).getBoolean("pref_allowSwipeDownClearAll", false);
     }
 
     /** If it's in the live tile mode, switch the running task into screenshot mode. */
