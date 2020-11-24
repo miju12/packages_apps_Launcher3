@@ -51,4 +51,9 @@
     <string name="settings_edit_allow_summary_on">Icons and widgets can be added, removed and moved on the homescreen</string>
     <string name="settings_edit_allow_summary_off">Icons and widgets can\'t be added, removed and moved on the homescreen</string>
     <string name="settings_edit_widgets_error">It\'s not possible to add widgets to the home screen</string>
+
+    <!-- Change scrim alpha in all apps -->
+    <string name="all_apps_background_opacity_title">All apps background transparency</string>
+    <string name="all_apps_background_opacity_summary">Make the background transparent or fully opaque</string>
+
 </resources>

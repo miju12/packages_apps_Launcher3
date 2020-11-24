@@ -39,6 +39,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.preference.Preference;
+import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceFragmentCompat.OnPreferenceStartFragmentCallback;
 import androidx.preference.PreferenceFragmentCompat.OnPreferenceStartScreenCallback;
@@ -53,6 +54,8 @@ import com.android.launcher3.Utilities;
 import com.android.launcher3.config.FeatureFlags;
 import com.android.launcher3.uioverrides.plugins.PluginManagerWrapper;
 import com.android.launcher3.util.SecureSettingsObserver;
+
+import com.android.launcher3.settings.preferences.CustomSeekBarPreference;
 
 /**
  * Settings activity for Launcher. Currently implements the following setting: Allow rotation
@@ -245,8 +248,17 @@ public class SettingsActivity extends FragmentActivity
                     mShowGoogleAppPref = preference;
                     updateIsGoogleAppEnabled();
                     return true;
-            }
 
+                case Utilities.KEY_ALL_APPS_BACKGROUND_ALPHA:
+                    CustomSeekBarPreference allAppsAlpha = 
+                            (CustomSeekBarPreference) findPreference(Utilities.KEY_ALL_APPS_BACKGROUND_ALPHA);
+                    allAppsAlpha.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
+                        public boolean onPreferenceChange(Preference preference, Object newValue) {
+                            LauncherAppState.getInstanceNoCreate().setNeedsRestart();
+                            return true;
+                        }
+                    });
+           }
             return true;
         }
 
