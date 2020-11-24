@@ -23,6 +23,8 @@ import static com.android.launcher3.util.SecureSettingsObserver.newNotificationS
 
 import static com.pixys.launcher.OverlayCallbackImpl.KEY_ENABLE_MINUS_ONE;
 
+import com.android.internal.util.pixys.PixysUtils;
+
 import com.android.launcher3.customization.IconDatabase;
 import android.app.Activity;
 import android.app.DialogFragment;
@@ -280,6 +282,9 @@ public class SettingsActivity extends Activity
                         AppReloader.get(mContext).reload();
                         return true;
                     });
+                case Utilities.KEY_ALLOW_ALL_APPS_BLUR:
+                case Utilities.KEY_ALL_APPS_BLUR:
+                    return PixysUtils.supportsBlur();
             }
             return true;
         }

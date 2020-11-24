@@ -73,4 +73,13 @@
 
     <!-- Icon size -->
     <string name="icon_size_title">Icon size</string>
+
+    <!-- Blur radius -->
+    <string name="enable_blur_title">Enable blur</string>
+    <string name="enable_blur_summary">Make the background go out of focus</string>
+    <string name="all_apps_blur_radius_title">All apps blur radius</string>
+    <string name="all_apps_blur_radius_summary">Make the background transparent or fully opaque</string>
+    <string name="overview_blur_radius_title">Overview blur radius</string>
+    <string name="overview_blur_radius_summary">Make the background transparent or fully opaque</string>
+
 </resources>
