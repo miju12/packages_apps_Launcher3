@@ -57,6 +57,12 @@
         android:defaultValue="true"
         android:persistent="true" />
 
+    <SwitchPreference
+        android:key="pref_allowRotation_user"
+        android:title="@string/allow_rotation_title"
+        android:defaultValue="true"
+        android:persistent="true" />
+
 <PreferenceCategory
         android:key="gestures_category"
         android:title="@string/gestures_category">
