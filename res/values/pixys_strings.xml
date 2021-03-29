@@ -75,7 +75,8 @@
     <string name="icon_size_title">Icon size</string>
 
     <!-- Blur radius -->
-    <string name="enable_blur_title">Enable blur</string>
+    <string name="enable_blur_all_apps_title">Enable blur in app drawer</string>
+    <string name="enable_blur_overview_title">Enable blur in app overview</string>
     <string name="enable_blur_summary">Make the background go out of focus</string>
     <string name="all_apps_blur_radius_title">All apps blur radius</string>
     <string name="all_apps_blur_radius_summary">Make the background transparent or fully opaque</string>
@@ -85,4 +86,8 @@
     <!-- Suggestions -->
     <string name="suggestion_pref_screen_title">Suggestions</string>
     <string name="suggestion_pref_screen_desc">For All Apps &amp; Home screen suggestions</string>
+
+   <string name="drawer_category">All apps drawer</string>
+   <string name="misc_category">miscellaneous</string>
+   <string name="actions_category">Actions</string>
 </resources>
