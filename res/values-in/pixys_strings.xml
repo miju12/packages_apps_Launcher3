@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+* Copyright (C) 2016 The Android Open Source Project
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*      http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+-->
+<resources>
+    <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
+    <string name="title_show_google_app">Tampilkan Aplikasi Google</string>
+    <!-- Settings message explaining when the -1 screen is available on an LTR device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_left">Ketika Anda mengusap ke kiri dari Layar Utama</string>
+    <!-- Settings message explaining when the -1 screen is available on an RTL device. [CHAR LIMIT=100] -->
+    <string name="msg_minus_one_on_right">Ketika Anda mengusap ke kanan dari Layar Utama</string>
+    <!-- Show searchbar -->
+    <string name="show_searchbar_title">Tampilkan bar pencarian</string>
+    <string name="show_searchbar_summary">Tampilkan bar pencarian di layar utama</string>
+    <string name="state_loading">Menerapkan\u2026</string>
+    <!-- Hide labels -->
+    <string name="desktop_show_labels">Tampilkan label ikon pada desktop</string>
+    <string name="drawer_show_labels">Tampilkan label ikon di laci</string>
+    <!-- Gestures -->
+    <string name="gestures_category">Gestur</string>
+    <string name="pref_notifications_gesture_title">Gestur notifikasi</string>
+    <string name="pref_notifications_gesture_summary">Geser ke bawah pada layar beranda untuk menampilkan panel QS</string>
+    <string name="pref_dt_gesture_title">Gestur ketuk dua kali</string>
+    <string name="pref_dt_gesture_summary">Ketuk dua kali pada ruang kosong untuk mematikan layar</string>
+    <string name="allow_swipe_down_clearall_title">Geser ke bawah untuk menghapus semua baru-baru ini</string>
+    <string name="allow_swipe_down_clearall_desc">Aktifkan untuk menghapus semua yang baru-baru ini di layar dengan menggesek ke bawah</string>
+    <!-- Edit workspace -->
+    <string name="settings_edit_allow_title">Izinkan sunting</string>
+    <string name="settings_edit_allow_summary_on">Ikon dan widget dapat ditambahkan, dihapus dan dipindahkan pada layar utama</string>
+    <string name="settings_edit_allow_summary_off">Ikon dan widget tidak dapat ditambahkan, dihapus dan dipindahkan pada layar utama</string>
+    <string name="settings_edit_widgets_error">Hal ini tidak mungkin untuk menambahkan widget ke layar utama</string>
+    <!-- Change scrim alpha in all apps -->
+    <string name="all_apps_background_opacity_title">Transparansi latar belakang semua aplikasi</string>
+    <string name="all_apps_background_opacity_summary">Buat latar belakang transparan atau sepenuhnya buram</string>
+    <!-- AppInfo -->
+    <!-- Used for preference height loading. -->
+    <!-- Preference default value -->
+    <!-- Icon size -->
+    <string name="icon_size_title">Ukuran ikon</string>
+    <!-- Blur radius -->
+    <string name="enable_blur_all_apps_title">Aktifkan blur di laci aplikasi</string>
+    <string name="enable_blur_overview_title">Aktifkan blur dalam gambaran aplikasi</string>
+    <string name="enable_blur_summary">Buat latar belakang tidak fokus</string>
+    <string name="all_apps_blur_radius_title">Radius blur semua aplikasi</string>
+    <string name="all_apps_blur_radius_summary">Buat latar belakang transparan atau sepenuhnya buram</string>
+    <string name="overview_blur_radius_title">Radius blur Gambaran</string>
+    <string name="overview_blur_radius_summary">Buat latar belakang transparan atau sepenuhnya buram</string>
+    <!-- Suggestions -->
+    <string name="suggestion_pref_screen_title">Saran</string>
+    <string name="suggestion_pref_screen_desc">Untuk Semua Aplikasi &amp; saran Layar Utama</string>
+    <string name="drawer_category">Semua laci aplikasi</string>
+    <string name="misc_category">lainnya</string>
+    <string name="actions_category">Tindakan</string>
+    <!-- Trust apps -->
+    <string name="trust_apps_manager_name">Aplikasi tersembunyi</string>
+    <string name="trust_apps_auth_manager">Buka kunci untuk mengelola aplikasi tersembunyi</string>
+    <string name="trust_apps_loading">Memuat\u2026</string>
+    <string name="trust_apps_no_lock_error">Silakan mengatur kunci layar untuk membatasi akses aplikasi</string>
+    <string name="trust_apps_help">Bantuan</string>
+    <string name="trust_app_summary">Sembunyikan aplikasi dari laci aplikasi</string>
+    <string name="trust_apps_info_hidden">Aplikasi tersembunyi dan widget mereka akan disembunyikan</string>
+</resources>
