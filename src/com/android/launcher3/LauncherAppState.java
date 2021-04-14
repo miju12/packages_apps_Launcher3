@@ -46,7 +46,7 @@ import com.android.launcher3.util.SecureSettingsObserver;
 import com.android.launcher3.util.SimpleBroadcastReceiver;
 import com.android.launcher3.widget.custom.CustomWidgetManager;
 
-import com.android.internal.util.pixys.PackageUtils;
+import com.android.internal.util.candy.PackageUtils;
 
 public class LauncherAppState {
 

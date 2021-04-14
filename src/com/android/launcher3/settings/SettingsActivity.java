@@ -23,7 +23,7 @@ import static com.android.launcher3.util.SecureSettingsObserver.newNotificationS
 
 import static com.pixys.launcher.OverlayCallbackImpl.KEY_ENABLE_MINUS_ONE;
 
-import com.android.internal.util.pixys.PixysUtils;
+import com.android.internal.util.candy.CandyUtils;
 
 import com.android.launcher3.customization.IconDatabase;
 import android.app.Activity;
@@ -306,7 +306,7 @@ public class SettingsActivity extends Activity
                     });
                 case Utilities.KEY_ALLOW_ALL_APPS_BLUR:
                 case Utilities.KEY_ALL_APPS_BLUR:
-                    return PixysUtils.supportsBlur();
+                    return CandyUtils.supportsBlur();
             }
             return true;
         }
